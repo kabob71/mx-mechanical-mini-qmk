@@ -22,7 +22,9 @@ copy .uf2 to RPI-RP2
 
 ## RP2040 Wiring (Pinout)
 vsys on keyboard  → vbus
+
 ground → ground
+
 ### Columns → RP2040 Pins
 
 Col 0 → GP21  
