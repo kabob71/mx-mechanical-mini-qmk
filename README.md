@@ -1,6 +1,13 @@
-MX Mechanical Mini QMK (RP2040)
+# Logitech MX Mechanical Mini QMK (RP2040 Conversion)
 
-This is a working QMK setup for the Logitech MX Mechanical Mini using an RP2040.
+This project converts the Logitech MX Mechanical Mini to run QMK using an RP2040.
+
+Includes:
+- Full matrix reverse engineering
+- RP2040 wiring (rows/columns pinout)
+- I2C LED driver support
+- Fix for key spam caused by LED refresh
+- Custom backlight behavior
 
 Includes:
 - Working matrix
@@ -69,3 +76,21 @@ SDB (shutdown) → GP0
 - GP3 (SCL) → 3.3V through 4.7kΩ  
 
 If LEDs don’t work, check these first
+
+
+
+
+
+
+
+
+
+
+
+
+
+Logitech MX Mechanical Mini QMK
+MX Mechanical Mini RP2040 conversion
+MX Mechanical Mini custom firmware
+
+
