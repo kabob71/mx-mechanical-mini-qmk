@@ -81,7 +81,11 @@ If LEDs don’t work, check these first
 
 
 
+## Keywords
 
+Logitech MX Mechanical Mini QMK  
+MX Mechanical Mini firmware mod  
+MX Mechanical Mini RP2040  
 
 
 
