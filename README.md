@@ -63,7 +63,7 @@ SDB (shutdown) → GP0
 
 ### Pull-ups (required)
 
-- GP0 (SDA) → 3.3V through 4.7kΩ  
-- GP1 (SCL) → 3.3V through 4.7kΩ  
+- GP2 (SDA) → 3.3V through 4.7kΩ  
+- GP3 (SCL) → 3.3V through 4.7kΩ  
 
 If LEDs don’t work, check these first
