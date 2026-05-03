@@ -55,8 +55,8 @@ Row 11 → GP18
 
 ## LED Driver (I2C)
 
-SDA → GP0  
-SCL → GP1  
+SDA → GP2
+SCL → GP3  
 SDB (shutdown) → GP0  
 
 ---
