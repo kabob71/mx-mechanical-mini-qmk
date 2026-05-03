@@ -5,48 +5,50 @@ This project converts the Logitech MX Mechanical Mini to run QMK using an RP2040
 Includes:
 - Full matrix reverse engineering
 - RP2040 wiring (rows/columns pinout)
-- I2C LED driver support
+- I2C LED driver support (0x30)
 - Fix for key spam caused by LED refresh
+- Combo lighting (Fn / Ctrl / Shift)
 - Custom backlight behavior
 
-Includes:
-- Working matrix
-- Working LED driver
-- Fixed key spam issue
-- Combo lighting
-- Custom brightness behavior
-
 Notes:
-- LED ghosting is hardware-related
-- LED driver is I2C (0x30)
+- LED ghosting is hardware-related (matrix/driver limitation)
 - Requires delayed LED updates to avoid key spam
+- This is not plug-and-play, requires hardware modding
 
-Build:
-qmk compile -kb caleb/rp2040 -km default
+## Build
 
-Flash:
-copy .uf2 to RPI-RP2
+This repo contains only the contents of a QMK keyboard folder.
 
-## RP2040 Wiring (Pinout)
-vsys on keyboard  → vbus
+1. Copy these files into:
+   qmk_firmware/keyboards/<your_keyboard_name>/
 
-ground → ground
+2. Compile:
+   qmk compile -kb <your_keyboard_name> -km default
 
-### Columns → RP2040 Pins
+## Flash
 
+Copy the generated `.uf2` file to:
+RPI-RP2
+
+---
+
+## RP2040 Wiring
+
+Power:
+VSYS (keyboard) → VBUS (RP2040)  
+GND → GND  
+
+Columns:
 Col 0 → GP21  
 Col 1 → GP12  
 Col 2 → GP9  
 Col 3 → GP10  
 Col 4 → GP4  
-Col 5 → GP3  
+Col 5 → GP1
 Col 6 → GP17  
 Col 7 → GP8  
 
----
-
-### Rows → RP2040 Pins
-
+Rows:
 Row 0 → GP20  
 Row 1 → GP19  
 Row 2 → GP26  
@@ -64,39 +66,13 @@ Row 11 → GP18
 
 ## LED Driver (I2C)
 
-SDA → GP2
-
+SDA → GP2  
 SCL → GP3  
+SDB → GP0  
 
-SDB (shutdown) → GP0  
+Pull-ups (required):
+GP2 (SDA) → 3.3V through 4.7kΩ  
+GP3 (SCL) → 3.3V through 4.7kΩ  
 
----
-
-### Pull-ups (required)
-
-- GP2 (SDA) → 3.3V through 4.7kΩ  
-- GP3 (SCL) → 3.3V through 4.7kΩ  
-
-If LEDs don’t work, check these first
-
-
-
-
-
-## Keywords
-
-Logitech MX Mechanical Mini QMK  
-MX Mechanical Mini firmware mod  
-MX Mechanical Mini RP2040  
-
-
-
-
-
-
-
-Logitech MX Mechanical Mini QMK
-MX Mechanical Mini RP2040 conversion
-MX Mechanical Mini custom firmware
-
+If LEDs don’t work, check pull-ups first.
 
