@@ -39,16 +39,19 @@ VSYS (keyboard) → VBUS (RP2040)
 GND → GND  
 
 Columns:
+
 Col 0 → GP21  
 Col 1 → GP12  
 Col 2 → GP9  
 Col 3 → GP10  
 Col 4 → GP4  
 Col 5 → GP1
+
 Col 6 → GP17  
 Col 7 → GP8  
 
 Rows:
+
 Row 0 → GP20  
 Row 1 → GP19  
 Row 2 → GP26  
